@@ -90,41 +90,30 @@ Do
         ' Prompt user if which set of dates they would like to update
         Set Results = CallUserForm()
         
-        If Results("SetA") = True Then
-            ' Insert a date
-            mydate = Date
-            Sheets("Labels").Range("B2") = mydate
-            With Sheets("Labels").Range("B2")
-                .NumberFormat = "yyyy/mm/dd"
-                .Font.Name = "Calibri"
-                .Font.Bold = True
-                .Font.Size = 8
-                .HorizontalAlignment = xlRight
-                .VerticalAlignment = xlVAlignCenter
-            End With
+        ' Get current date
+        mydate = Date
         
+        If Results("SetA") = True Then
             ' Insert the most recently seen date.
             rng.Offset(0, 2) = mydate
             rng.Offset(0, 2).NumberFormat = "yyyy.m.d"
         End If
         If Results("SetB") = True Then
-            ' Insert a date
-            mydate = Date
-            Sheets("Labels").Range("B2") = mydate
-            With Sheets("Labels").Range("B2")
-                .NumberFormat = "yyyy/mm/dd"
-                .Font.Name = "Calibri"
-                .Font.Bold = True
-                .Font.Size = 8
-                .HorizontalAlignment = xlRight
-                .VerticalAlignment = xlVAlignCenter
-            End With
-        
             ' Insert the most recently seen date.
             rng.Offset(0, 3) = mydate
             rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
         End If
         
+        ' Insert a date
+        Sheets("Labels").Range("B2") = mydate
+        With Sheets("Labels").Range("B2")
+            .NumberFormat = "yyyy/mm/dd"
+            .Font.Name = "Calibri"
+            .Font.Bold = True
+            .Font.Size = 8
+            .HorizontalAlignment = xlRight
+            .VerticalAlignment = xlVAlignCenter
+        End With
         
         ' Copy INFO as a description
         Sheets("Labels").Range("A3") = rng.Offset(0, 1).Text
@@ -222,41 +211,30 @@ For Each eachRng In IDrng
         End With
         
         
-        ' Update date column based on user input
+        ' Get current date
+        mydate = Date
+        
         If Results("SetA") = True Then
-            ' Insert a date
-            mydate = Date
-            Sheets("Labels").Range("B2") = mydate
-            With Sheets("Labels").Range("B2")
-                .NumberFormat = "yyyy/mm/dd"
-                .Font.Name = "Calibri"
-                .Font.Bold = True
-                .Font.Size = 8
-                .HorizontalAlignment = xlRight
-                .VerticalAlignment = xlVAlignCenter
-            End With
-            
             ' Insert the most recently seen date.
             rng.Offset(0, 2) = mydate
             rng.Offset(0, 2).NumberFormat = "yyyy.m.d"
         End If
         If Results("SetB") = True Then
-            ' Insert a date
-            mydate = Date
-            Sheets("Labels").Range("B2") = mydate
-            With Sheets("Labels").Range("B2")
-                .NumberFormat = "yyyy/mm/dd"
-                .Font.Name = "Calibri"
-                .Font.Bold = True
-                .Font.Size = 8
-                .HorizontalAlignment = xlRight
-                .VerticalAlignment = xlVAlignCenter
-            End With
-            
             ' Insert the most recently seen date.
             rng.Offset(0, 3) = mydate
             rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
         End If
+        
+        ' Insert a date
+        Sheets("Labels").Range("B2") = mydate
+        With Sheets("Labels").Range("B2")
+            .NumberFormat = "yyyy/mm/dd"
+            .Font.Name = "Calibri"
+            .Font.Bold = True
+            .Font.Size = 8
+            .HorizontalAlignment = xlRight
+            .VerticalAlignment = xlVAlignCenter
+        End With
         
         
         ' Copy INFO as a description

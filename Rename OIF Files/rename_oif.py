@@ -13,7 +13,7 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, simpledialog
 
-def select_file():
+def select_file(filetypes = None):
     """Prompt user to select a file
 
     Returns:
@@ -22,18 +22,18 @@ def select_file():
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", 1)
-    filetypes = [('oif files', '*.oif')]
-    file_nm = filedialog.askopenfilename(title="Select files", filetypes=filetypes)
+    file_nm = filedialog.askopenfilename(title="Select file", filetypes=filetypes)
 
     if file_nm == "":
         return None
     return Path(file_nm)
 
-def get_new_name(old_name):
+def get_new_name(old_name, prompt):
     """Prompt user for a new name, using the old name as the initial value
 
     Args:
         old_name (str): old name that is being updated
+        prompt (str): text to prompt user with
 
     Returns:
         str: new name given by user
@@ -42,8 +42,7 @@ def get_new_name(old_name):
     root.withdraw()
     root.attributes("-topmost", 1)
     pad = " " * 50
-    prompt_text = "Enter new name of .oif file"
-    new_name = simpledialog.askstring("Input", pad+prompt_text+pad, initialvalue=old_name)
+    new_name = simpledialog.askstring("Input", pad+prompt+pad, initialvalue=old_name)
     return new_name
 
 def rename_oif_file(old_oif_path, new_name):
@@ -106,16 +105,18 @@ def rename_oif_file(old_oif_path, new_name):
 
 def main():
     """Prompt user to select oif file and new name for it then rename it."""
-    file_nm = select_file()
-    if file_nm is None:
-        print("Canceled file selection")
-        return
-    new_name = get_new_name(file_nm.stem)
-    if new_name is None:
-        print("Canceled new name selection")
-        return
+    while True:
+        file_nm = select_file(filetypes=[('oif files', '*.oif')])
+        if file_nm is None:
+            print("Canceled file selection")
+            return
+        new_name = get_new_name(file_nm.stem, prompt="Enter new name of .oif file")
+        if new_name is None:
+            print("Canceled new name selection")
+            return
 
-    rename_oif_file(file_nm, new_name)
+        rename_oif_file(file_nm, new_name)
+        print(f"Renamed {file_nm.stem} to {new_name}")
 
 if __name__ == "__main__":
     main()

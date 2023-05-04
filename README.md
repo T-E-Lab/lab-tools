@@ -18,12 +18,12 @@ Python script to convert all oif files in a directory to tiff files.
 
 #### How to run:
 * After [Installing](#how-to-install-a-fiji--script), select the script
-![Select script](FIJI%20Scripts/docs/images/select_script_to_run.png "Select script")
+![Select script](Fiji%20Scripts/docs/images/select_script_to_run.png "Select script")
 * Select folder to run it on
-![Run script](FIJI%20Scripts/docs/images/run_script.png "Run script")
+![Run script](Fiji%20Scripts/docs/images/run_script.png "Run script")
 * After the script completes there will be a tiff folder in the same directory as every .oif file
-![Script results](FIJI%20Scripts/docs/images/script_results.png "Script results")
-![Script results tiff folder](FIJI%20Scripts/docs/images/script_results_tiffs.png "Script results tiff folder")
+![Script results](Fiji%20Scripts/docs/images/script_results.png "Script results")
+![Script results tiff folder](Fiji%20Scripts/docs/images/script_results_tiffs.png "Script results tiff folder")
 
 ### How to install a Fiji  script:
 https://imagej.net/scripting/#adding-scripts-to-the-plugins-menu
@@ -36,7 +36,7 @@ https://imagej.net/scripting/#adding-scripts-to-the-plugins-menu
   The default install location places it under plugins, you can select a subfolder to place it in another menu.
 ![Select script location](Fiji%20Scripts/docs/images/select_script_location.png "Select script location")
 * After restarting fiji, the script will apear in the menu it was placed in
- ![Script saved in plugins](FIJI%20Scripts/docs/images/script_saved_in_plugins.png "Script saved in plugins")
+ ![Script saved in plugins](Fiji%20Scripts/docs/images/script_saved_in_plugins.png "Script saved in plugins")
 * If your plugins menu is too long, you can move the script under Plugins > Macros by saving to the Macros folder when selecting the install location
 
 ## Rename OIF Files

@@ -95,13 +95,13 @@ Do
         
         If Results("SetA") = True Then
             ' Insert the most recently seen date.
-            rng.Offset(0, 2) = mydate
-            rng.Offset(0, 2).NumberFormat = "yyyy.m.d"
+            rng.Offset(0, 3) = mydate
+            rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
         End If
         If Results("SetB") = True Then
             ' Insert the most recently seen date.
-            rng.Offset(0, 3) = mydate
-            rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
+            rng.Offset(0, 4) = mydate
+            rng.Offset(0, 4).NumberFormat = "yyyy.m.d"
         End If
         
         ' Insert a date
@@ -116,7 +116,7 @@ Do
         End With
         
         ' Copy INFO as a description
-        Sheets("Labels").Range("A3") = rng.Offset(0, 1).Text
+        Sheets("Labels").Range("A3") = rng.Offset(0, 2).Text
         With Sheets("Labels").Range("A3")
             .Font.Name = "Calibri"
             .WrapText = True
@@ -126,7 +126,7 @@ Do
         End With
         
         ' Copy Type as a description
-        Sheets("Labels").Range("B4") = rng.Offset(0, 4).Text
+        Sheets("Labels").Range("B4") = rng.Offset(0, 5).Text
         With Sheets("Labels").Range("B4")
             .Font.Name = "Calibri"
             .Font.Bold = True
@@ -216,13 +216,13 @@ For Each eachRng In IDrng
         
         If Results("SetA") = True Then
             ' Insert the most recently seen date.
-            rng.Offset(0, 2) = mydate
-            rng.Offset(0, 2).NumberFormat = "yyyy.m.d"
+            rng.Offset(0, 3) = mydate
+            rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
         End If
         If Results("SetB") = True Then
             ' Insert the most recently seen date.
-            rng.Offset(0, 3) = mydate
-            rng.Offset(0, 3).NumberFormat = "yyyy.m.d"
+            rng.Offset(0, 4) = mydate
+            rng.Offset(0, 4).NumberFormat = "yyyy.m.d"
         End If
         
         ' Insert a date
@@ -238,7 +238,7 @@ For Each eachRng In IDrng
         
         
         ' Copy INFO as a description
-        Sheets("Labels").Range("A3") = rng.Offset(0, 1).Text
+        Sheets("Labels").Range("A3") = rng.Offset(0, 2).Text
         With Sheets("Labels").Range("A3")
             .Font.Name = "Calibri"
             .WrapText = True
@@ -248,7 +248,7 @@ For Each eachRng In IDrng
         End With
         
         ' Copy Type as a description
-        Sheets("Labels").Range("B4") = rng.Offset(0, 4).Text
+        Sheets("Labels").Range("B4") = rng.Offset(0, 5).Text
         With Sheets("Labels").Range("B4")
             .Font.Name = "Calibri"
             .Font.Bold = True

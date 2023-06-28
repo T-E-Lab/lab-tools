@@ -134,6 +134,16 @@ Do
             .WrapText = False
             .VerticalAlignment = xlVAlignCenter
         End With
+        
+        ' Copy old Id as a description
+        Sheets("Labels").Range("A4") = rng.Offset(0, 1).Text
+        With Sheets("Labels").Range("A4")
+            .Font.Name = "Calibri"
+            .Font.Bold = True
+            .Font.Size = 8
+            .WrapText = False
+            .VerticalAlignment = xlVAlignCenter
+        End With
     
         ' Print
         'Sheets("Labels").PrintPreview
@@ -250,6 +260,16 @@ For Each eachRng In IDrng
         ' Copy Type as a description
         Sheets("Labels").Range("B4") = rng.Offset(0, 5).Text
         With Sheets("Labels").Range("B4")
+            .Font.Name = "Calibri"
+            .Font.Bold = True
+            .Font.Size = 8
+            .WrapText = False
+            .VerticalAlignment = xlVAlignCenter
+        End With
+        
+        ' Copy old Id as a description
+        Sheets("Labels").Range("A4") = rng.Offset(0, 1).Text
+        With Sheets("Labels").Range("A4")
             .Font.Name = "Calibri"
             .Font.Bold = True
             .Font.Size = 8

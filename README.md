@@ -2,12 +2,23 @@
  Tiny tools for various lab needs
 
 ## Table of Contents
+- [Data Management](#data-management)
+  - [fix\_avi\_metadata.py](#fix_avi_metadatapy)
 - [Fly Barcode Macros](#fly-barcode-macros)
 - [Fiji  Scripts](#fiji--scripts)
   - [Convert\_oif\_to\_tiff.py](#convert_oif_to_tiffpy)
     - [How to run:](#how-to-run)
   - [How to install a Fiji  script:](#how-to-install-a-fiji--script)
 - [Rename OIF Files](#rename-oif-files)
+
+## Data Management
+Script for data managment
+### fix_avi_metadata.py
+This script fixes missing duration metadata in all `.avi` files in a folder. Run with:
+```bash
+python fix_avi_metadata.py -f video_folder
+```
+the ffmpeg-python is required to run it.
 
 ## Fly Barcode Macros
 Excel macros for printing barcode labels

@@ -14,7 +14,7 @@ def parse_args():
         Namespace: args object. Access the folder path with args.folder.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--folder','-f', type=str, action='store', help="folder with avi's")
+    parser.add_argument('folder' type=str, action='store', help="folder with avi's")
     args = parser.parse_args()
     return args
 

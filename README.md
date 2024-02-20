@@ -16,7 +16,7 @@ Script for data managment
 ### fix_avi_metadata.py
 This script fixes missing duration metadata in all `.avi` files in a folder. Run with:
 ```bash
-python fix_avi_metadata.py -f video_folder
+python fix_avi_metadata.py video_folder
 ```
 the ffmpeg-python is required to run it.
 

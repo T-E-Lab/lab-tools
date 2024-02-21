@@ -7,5 +7,5 @@ call "%~dp0\..\create_log_file_name.bat" parse_and_pickle_bhv_file
 
 REM Run script
 call "%~dp0\..\activate_conda_env.bat" gulp2p
-python "%~dp0\parse_and_pickle_bhv_file.py" > %log_file%
+python "%~dp0\parse_and_pickle_bhv_file.py" > %log_file% 2>&1
 call conda deactivate

@@ -3,7 +3,7 @@ rem run a Python script in a given conda environment from a batch file.
 rem https://gist.github.com/maximlt/531419545b039fa33f8845e5bc92edd6
 
 rem Define here the path to your conda installation
-set CONDAPATH=%UserProfile%\Anaconda3
+set CONDAPATH=%UserProfile%\anaconda3
 rem Get env name from the batch argument
 set ENVNAME=%1
 

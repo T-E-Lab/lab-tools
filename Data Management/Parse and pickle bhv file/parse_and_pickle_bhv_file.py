@@ -34,7 +34,6 @@ def main():
         if path.stem in parsed_files:
             continue
         parse_and_pickle(path)
-        break
 
 if __name__ == "__main__":
     main()

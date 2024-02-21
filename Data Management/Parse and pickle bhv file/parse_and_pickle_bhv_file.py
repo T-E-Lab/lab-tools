@@ -17,7 +17,6 @@ def parse_and_pickle(path):
 
     # Pickle uvr object
     pickle_path = Path(PICKLE_FOLDER, path.with_suffix(".pickle").name)
-    print(pickle_path)
     with open(pickle_path, "wb") as file:
         pickle.dump(uvr, file)
 

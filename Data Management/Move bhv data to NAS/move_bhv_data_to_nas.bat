@@ -2,7 +2,7 @@
 REM Batch file to transfer behavioral data to the NAS
 
 SET src="C:\Users\exx\AppData\LocalLow\Default company\Fly Virtual Reality - 3D Rotating test world"
-SET dst="Z:\Live Fly Imaging data\unity\Backups"
+SET dst="Z:\Live Fly Imaging data\unity\raw data\Backups"
 SET exclude="SessionParameters.json"
 
 REM Append time and date to filename

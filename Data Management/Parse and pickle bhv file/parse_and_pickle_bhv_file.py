@@ -9,22 +9,14 @@ from unityvr.analysis import posAnalysis
 BHV_FOLDER = Path(r"Z:\Live Fly Imaging data\unity\raw data")
 PICKLE_FOLDER = Path(r"Z:\Live Fly Imaging data\unity\pickles")
 
-def heal_json(path):
-    # Sometimes json files are broken,
-    # they still have data but the ending bracket is missing.
-    with open(path, "a") as file:
-        file.write("]\n")
-
-
 def parse_and_pickle(path):
     # Parse behavior file
     # uvr.posDf starts with columns: frame, time, dt, x, y, angle, dx, dy, dxattempt, dyattempt
     try:
         uvr = lp.constructUnityVRexperiment(str(path.parent), path.name)
     except json.decoder.JSONDecodeError:
-        print(f"Failed to read {path}, healing json and trying again")
-        heal_json(path)
-        uvr = lp.constructUnityVRexperiment(str(path.parent), path.name)
+        print(f"Failed to read {path}, json is broken")
+        return
     uvr.posDf = posAnalysis.computeVelocities(uvr.posDf) # Adds columns: vT, vR, vT_filt, vR_filt
     uvr.posDf = posAnalysis.position(uvr, derive=True) # Adds columns: ds, s, dTh, radangle
 

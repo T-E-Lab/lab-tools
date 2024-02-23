@@ -32,6 +32,9 @@ def main():
             continue
         if path.stem in parsed_files:
             continue
+        if (path.stat().st_size / (2**10)) < 200:
+            # Skip files smaller than 200 KiloBytes
+            continue
         parse_and_pickle(path)
 
 if __name__ == "__main__":

@@ -22,6 +22,7 @@ def parse_and_pickle(path):
     try:
         uvr = lp.constructUnityVRexperiment(str(path.parent), path.name)
     except json.decoder.JSONDecodeError:
+        print(f"Failed to read {path}, healing json and trying again")
         heal_json(path)
         uvr = lp.constructUnityVRexperiment(str(path.parent), path.name)
     uvr.posDf = posAnalysis.computeVelocities(uvr.posDf) # Adds columns: vT, vR, vT_filt, vR_filt

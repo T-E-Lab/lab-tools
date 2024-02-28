@@ -1,5 +1,8 @@
 @echo off
 REM Batch file to run parse_and_pickle_bhv_file.py
+REM Run in windows task scheduler with: 
+REM Program: Wscript
+REM Args: "C:\Users\remoteuser\Documents\GitHub\lab-tools\Data Management\launchquiet.vbs" "C:\Users\remoteuser\Documents\GitHub\lab-tools\Data Management\Parse and pickle bhv file\parse_and_pickle_bhv_file.bat"
 
 SET folder="Z:\Live Fly Imaging data\fictrac"
 REM Create log file name

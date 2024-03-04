@@ -15,4 +15,4 @@ set "fullstamp=%YYYY%-%MM%-%DD%_%HH%-%Min%-%Sec%"
 SET log_file="\\TurnerEvans-NAS\Lab Storage\Data Management\Logs\move_bhv_data_to_nas_%fullstamp%.log"
 
 REM Move files from source to destination and create a log file
-robocopy %src% %dst% *.json /S /E /DCOPY:DAT /MOV /IS /IM /IT /XF %exclude% /LOG:%log_file% /NP
+robocopy %src% %dst% *.json /S /E /DCOPY:DAT /MOV /IS /IM /IT /XX /XF %exclude% /LOG:%log_file% /NP
